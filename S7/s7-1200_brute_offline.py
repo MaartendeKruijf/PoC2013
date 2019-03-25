@@ -30,6 +30,7 @@ def get_challenge_response(pcap_file):
     r = rdpcap(pcap_file)
 
     lens = map(lambda x: x.len, r)
+    lens = list(lens)
     pckt_lens = dict([(i, lens[i]) for i in range(0,len(lens))])
 
     # try to find challenge packet
